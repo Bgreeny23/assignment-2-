@@ -1,4 +1,4 @@
-from quizme.ars.qtype.question import Question
+from ars.qtype.question import Question
 
 class TrueFalse(Question):
     def __init__(self, question, answer, explanation=""):
@@ -23,4 +23,3 @@ class TrueFalse(Question):
 
     def incorrect_feedback(self):
         return f"Incorrect. {self._explanation}" if self._explanation else "Incorrect."
- 
