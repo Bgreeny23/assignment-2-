@@ -1,7 +1,7 @@
-"""Module for managing boxes in the Adaptive Review System."""
 from datetime import timedelta
-from box import Box
-from question import Question
+from .box import Box
+from .qtype.shortanswer import ShortAnswer
+from .qtype.truefalse import TrueFalse
 
 class BoxManager:
     def __init__(self):
