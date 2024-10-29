@@ -1,6 +1,6 @@
-from .boxmanager import BoxManager
-from .qtype.shortanswer import ShortAnswer
-from .qtype.truefalse import TrueFalse
+from quizme.ars.boxmanager import BoxManager
+from quizme.ars.qtype.shortanswer import ShortAnswer
+from quizme.ars.qtype.truefalse import TrueFalse
 
 class ARController:
     def __init__(self, question_data):
