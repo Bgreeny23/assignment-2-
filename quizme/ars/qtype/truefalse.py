@@ -1,5 +1,4 @@
-"""Module for the TrueFalse quiz item class in the Adaptive Review System."""
-from question import Question
+from quizme.ars.qtype.question import Question
 
 class TrueFalse(Question):
     def __init__(self, question, answer, explanation=""):
