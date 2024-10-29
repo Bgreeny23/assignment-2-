@@ -1,8 +1,6 @@
-from datetime import timedelta
-from .box import Box
-from .qtype.shortanswer import ShortAnswer
-from .qtype.truefalse import TrueFalse
-
+from quizme.ars.box import Box
+from quizme.ars.qtype.shortanswer import ShortAnswer
+from quizme.ars.qtype.truefalse import TrueFalse
 class BoxManager:
     def __init__(self):
         self._boxes = [
