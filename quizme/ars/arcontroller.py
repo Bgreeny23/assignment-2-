@@ -9,18 +9,18 @@ class ARController:
 
     def _initialize_questions(self, question_data):
         for data in question_data:
-            question_type = data["type"]
+            question_type = data.get("type")
             try:
                 if question_type == "shortanswer":
                     question = ShortAnswer(data["question"], data["correct_answer"], data.get("case_sensitive", False))
                 elif question_type == "truefalse":
                     question = TrueFalse(data["question"], data["correct_answer"], data.get("explanation", ""))
                 else:
-                    print(f"Unsupported question type: {question_type}")
+                    print(f"Unsupported question type: {question_type}. Skipping this question.")
                     continue
                 self._box_manager.add_new_question(question)
             except KeyError as e:
-                print(f"Error initializing question: missing {e}")
+                print(f"Missing required field for question: {e}. Skipping this question.")  # Fixed quotes
 
     def start(self):
         print("Type 'q' at any time to quit the session.")
@@ -33,7 +33,10 @@ class ARController:
             user_answer = input("Your answer: ")
             if user_answer.lower() == 'q':
                 break
-            correct = question.check_answer(user_answer)
-            print("Correct!" if correct else question.incorrect_feedback())
-            self._box_manager.move_question(question, correct)
+            try:
+                correct = question.check_answer(user_answer)
+                print("Correct!" if correct else question.incorrect_feedback())
+                self._box_manager.move_question(question, correct)
+            except ValueError as e:
+                print(f"Invalid input: {e}")  # Update to provide feedback on invalid input
         print("Thank you, goodbye!")
