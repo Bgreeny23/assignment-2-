@@ -1,6 +1,5 @@
-"""Module for the ShortAnswer quiz item class in the Adaptive Review System."""
+from quizme.ars.qtype.question import Question
 import re
-from question import Question
 
 class ShortAnswer(Question):
     def __init__(self, question, answer, case_sensitive=False):
