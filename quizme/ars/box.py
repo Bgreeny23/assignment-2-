@@ -1,7 +1,6 @@
-"""Module for the Box class in the Adaptive Review System."""
 from datetime import timedelta, datetime
-from typing import List, Optional
-from question import Question
+from typing import Optional
+from .qtype.question import Question
 
 class Box:
     def __init__(self, name, priority_interval):
