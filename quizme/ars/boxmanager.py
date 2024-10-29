@@ -1,7 +1,7 @@
 from datetime import timedelta
-from quizme.ars.box import Box
-from quizme.ars.qtype.shortanswer import ShortAnswer
-from quizme.ars.qtype.truefalse import TrueFalse
+from ars.box import Box
+from ars.qtype.shortanswer import ShortAnswer
+from ars.qtype.truefalse import TrueFalse
 
 class BoxManager:
     def __init__(self):
@@ -39,4 +39,3 @@ class BoxManager:
     def _log_box_counts(self):
         for box in self._boxes:
             print(f"{box.name}: {len(box)} questions")
- 
