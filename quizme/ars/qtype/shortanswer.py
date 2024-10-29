@@ -1,4 +1,4 @@
-from quizme.ars.qtype.question import Question
+from ars.qtype.question import Question
 import re
 
 class ShortAnswer(Question):
@@ -17,4 +17,3 @@ class ShortAnswer(Question):
 
     def incorrect_feedback(self):
         return f"Incorrect. The correct answer is: {self._answer}"
- 
