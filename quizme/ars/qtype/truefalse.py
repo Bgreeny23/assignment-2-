@@ -8,7 +8,6 @@ class TrueFalse(Question):
         self._explanation = explanation
 
     def ask(self):
-        super().ask()
         return f"{self._question} (True/False)"
 
     def check_answer(self, answer):
@@ -18,8 +17,9 @@ class TrueFalse(Question):
         elif normalized_answer in ["false", "f"]:
             user_answer = False
         else:
-            raise ValueError("Answer must be 'True' or 'False'.")
+            raise ValueError("Answer must be 'True' or 'False'.")  # Raise ValueError for invalid input
+
         return user_answer == self._answer
 
     def incorrect_feedback(self):
-        return f"Incorrect. {self._explanation}" if self._explanation else "Incorrect."
+        return f"Incorrect. {self._explanation}" if self._explanation else "Incorrect. "  # Ensure trailing space
