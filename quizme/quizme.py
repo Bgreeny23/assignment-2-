@@ -6,7 +6,8 @@ It uses the Adaptive Review System (ARS) to manage the quiz session.
 """
 import json
 from pathlib import Path
-from arcontroller import ARController
+from quizme.ars.arcontroller import ARController
+
 
 def load_questions(file_path: Path):
     try:
