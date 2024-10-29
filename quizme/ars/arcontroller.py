@@ -1,6 +1,6 @@
-from quizme.ars.boxmanager import BoxManager
-from quizme.ars.qtype.shortanswer import ShortAnswer
-from quizme.ars.qtype.truefalse import TrueFalse
+from ars.boxmanager import BoxManager
+from ars.qtype.shortanswer import ShortAnswer
+from ars.qtype.truefalse import TrueFalse
 
 class ARController:
     def __init__(self, question_data):
@@ -37,4 +37,3 @@ class ARController:
             print("Correct!" if correct else question.incorrect_feedback())
             self._box_manager.move_question(question, correct)
         print("Thank you, goodbye!")
- 
