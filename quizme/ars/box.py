@@ -37,3 +37,4 @@ class Box:
 
     def __str__(self):
         return f"Box(name='{self._name}', questions_count={len(self._questions)})"
+ 
