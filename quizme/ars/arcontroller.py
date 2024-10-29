@@ -1,7 +1,6 @@
-"""Core module for running the Adaptive Review System (ARS) session."""
-from boxmanager import BoxManager
-from shortanswer import ShortAnswer
-from truefalse import TrueFalse
+from .boxmanager import BoxManager
+from .qtype.shortanswer import ShortAnswer
+from .qtype.truefalse import TrueFalse
 
 class ARController:
     def __init__(self, question_data):
