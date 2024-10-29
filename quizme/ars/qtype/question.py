@@ -1,4 +1,3 @@
-"""Module for the base Question class in the Adaptive Review System."""
 import uuid
 from datetime import datetime
 from abc import ABC, abstractmethod
